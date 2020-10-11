@@ -637,6 +637,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetDir)$(TargetFileName)" "$(ProjectDir)..\..\..\..\Common\QLBH.Documents\References\TranAnh\HeThong\$(TargetFileName)"
-copy /Y "$(ProjectDir)bin\$(ConfigurationName)\TranAnh\QLBanHang.Modules.HeThong.pdb" "$(ProjectDir)..\..\..\..\Common\QLBH.Documents\References\TranAnh\HeThong\QLBanHang.Modules.HeThong.pdb"</PostBuildEvent>
+copy /Y "$(ProjectDir)bin\$(ConfigurationName)\TranAnh\QLBanHang.Modules.HeThong.pdb" "$(ProjectDir)..\..\..\..\Common\QLBH.Documents\References\TranAnh\HeThong\QLBanHang.Modules.HeThong.pdb"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>
