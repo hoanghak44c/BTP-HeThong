@@ -1,0 +1,642 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{633A0200-EB49-4078-99AC-39EED12983D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLBanHang</RootNamespace>
+    <AssemblyName>QLBanHang.Modules.HeThong</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <StartupObject>
+    </StartupObject>
+    <ManifestCertificateThumbprint>7594B1A05527A26AEDD64E6C5781ADB2C2DC26F0</ManifestCertificateThumbprint>
+    <ManifestKeyFile>QLBanHang_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>D:\Projects\QLBanHang\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\TranAnh\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\TranAnh\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\QLBH.Documents\References\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\QLBH.Documents\References\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\QLBH.Documents\References\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v9.2, Version=9.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="QLBanHang.Modules.BanHang, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Common\QLBH.Documents\References\TranAnh\BanHang\QLBanHang.Modules.BanHang.dll</HintPath>
+    </Reference>
+    <Reference Include="QLBanHang.Modules.DanhMuc, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Common\QLBH.Documents\References\TranAnh\DanhMuc\QLBanHang.Modules.DanhMuc.dll</HintPath>
+    </Reference>
+    <Reference Include="QLBH.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Common\QLBH.Documents\References\QLBH.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="QLBH.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Common\QLBH.Documents\References\QLBH.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Common\QLBH.Win\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\..\Common\QLBH.Win\Properties\Settings.Designer.cs">
+      <Link>Properties\Settings.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_InMaVach2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_InMaVach2.Designer.cs">
+      <DependentUpon>frm_InMaVach2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\SessionDbDao.cs" />
+    <Compile Include="Modules\HeThong\ThamSoBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\ThamSoBanHang.Designer.cs">
+      <DependentUpon>ThamSoBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_CrmTid_CapNhatPhienBanMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_CrmTid_CapNhatPhienBanMoi.Designer.cs">
+      <DependentUpon>frmHT_CrmTid_CapNhatPhienBanMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\ChungTuLockDAO.cs" />
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenNganhHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenNganhHang.Designer.cs">
+      <DependentUpon>frmBC_PhanQuyenNganhHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenChucNangNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenChucNangNguoiDung.Designer.cs">
+      <DependentUpon>frmBC_PhanQuyenChucNangNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenNhomNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmBC_PhanQuyenNhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\NhatKyNguoiDungDAO.cs" />
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenChucNang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBC_PhanQuyenChucNang.Designer.cs">
+      <DependentUpon>frmBC_PhanQuyenChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_SaleTid_CapNhatPhienBanMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_SaleTid_CapNhatPhienBanMoi.Designer.cs">
+      <DependentUpon>frmHT_SaleTid_CapNhatPhienBanMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_LockChungTuManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_LockChungTuManager.Designer.cs">
+      <DependentUpon>frmHT_LockChungTuManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_SessionDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_SessionDB.Designer.cs">
+      <DependentUpon>frmHT_SessionDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_GenMaVach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_GenMaVach.Designer.cs">
+      <DependentUpon>frm_GenMaVach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\InMaVachDAO.cs" />
+    <Compile Include="Modules\HeThong\DAO\PhanQuyenHangSanXuatDAO.cs" />
+    <Compile Include="Modules\HeThong\DAO\ThuongNhanVienDAO.cs" />
+    <Compile Include="Modules\HeThong\frmThietLapCaLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThietLapCaLamViec.Designer.cs">
+      <DependentUpon>frmThietLapCaLamViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThietLapThuongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThietLapThuongNhanVien.Designer.cs">
+      <DependentUpon>frmHT_ThietLapThuongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\PhanQuyenNganhHangDAO.cs" />
+    <Compile Include="Modules\HeThong\DAO\SystemDAO.cs" />
+    <Compile Include="Modules\HeThong\frmHT_AddNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_AddNguoiDung.Designer.cs">
+      <DependentUpon>frmHT_AddNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_AddPheDuyetGiaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_AddPheDuyetGiaBan.Designer.cs">
+      <DependentUpon>frmHT_AddPheDuyetGiaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ListNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ListNguoiDung.Designer.cs">
+      <DependentUpon>frmHT_ListNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\NhomNguoiDungDAO.cs" />
+    <Compile Include="Modules\HeThong\frmHT_AddNhomNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_AddNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmHT_AddNhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ListNhomNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ListNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmHT_ListNhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\ChucNangDAO.cs" />
+    <Compile Include="Modules\HeThong\frmHT_ListChucNang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ListChucNang.Designer.cs">
+      <DependentUpon>frmHT_ListChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\DAO\NguoiDungDAO.cs" />
+    <Compile Include="Modules\HeThong\frmHT_ThietLapPheDuyetGiaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThietLapPheDuyetGiaBan.Designer.cs">
+      <DependentUpon>frmHT_ThietLapPheDuyetGiaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_InMaVach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frm_InMaVach.Designer.cs">
+      <DependentUpon>frm_InMaVach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\Infors\ChucNangInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\BaoCaoPhanQuyenInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\ChungTuLockInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\NhatKyNguoiDungInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\ItemInMaVachInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\PheDuyetNganhHangInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\PhanQuyenHangSanXuatInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\ThangDiemThuongNhanVienInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\CachTinhThuongNhanVienInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\NhomNguoiDungInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\NguoiDungInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\PhanQuyenNganhHangInfor.cs" />
+    <Compile Include="Modules\HeThong\Infors\PheDuyetGiaBanInfor.cs" />
+    <Compile Include="Modules\HeThong\Providers\ChucNangDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\ChungTuLockProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\NhatKyNguoiDungDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\InMaVachDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\PhanQuyenHangSanXuatDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\SessionDbDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\ThuongNhanVienDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\NhomNguoiDungDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Providers\NguoiDungDataProvider.cs" />
+    <Compile Include="Modules\HeThong\LockControl.cs" />
+    <Compile Include="Modules\HeThong\Providers\DMNhomNguoiDungDataProvider.cs" />
+    <Compile Include="Modules\HeThong\frmBackupRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmBackupRestore.Designer.cs">
+      <DependentUpon>frmBackupRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ChangePass.Designer.cs">
+      <DependentUpon>frmHT_ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmChinhSachChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmChinhSachChung.Designer.cs">
+      <DependentUpon>frmChinhSachChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmDM_NhomNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmDM_NhomNguoiDung.Designer.cs">
+      <DependentUpon>frmDM_NhomNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmGioiThieu.Designer.cs">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ChamCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ChamCong.Designer.cs">
+      <DependentUpon>frmHT_ChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_NhatKyERP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_NhatKyERP.Designer.cs">
+      <DependentUpon>frmHT_NhatKyERP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_NhatKyNSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_NhatKyNSD.Designer.cs">
+      <DependentUpon>frmHT_NhatKyNSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_QuanTriNSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_QuanTriNSD.Designer.cs">
+      <DependentUpon>frmHT_QuanTriNSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThamSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThamSo.Designer.cs">
+      <DependentUpon>frmHT_ThamSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThemNhomNSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_ThemNhomNSD.Designer.cs">
+      <DependentUpon>frmHT_ThemNhomNSD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_TuychonNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmHT_TuychonNguoiDung.Designer.cs">
+      <DependentUpon>frmHT_TuychonNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmKhachMacDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmKhachMacDinh.designer.cs">
+      <DependentUpon>frmKhachMacDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmMoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmMoSo.Designer.cs">
+      <DependentUpon>frmMoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmNgayDuDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmNgayDuDau.Designer.cs">
+      <DependentUpon>frmNgayDuDau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmNgayLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmNgayLamViec.designer.cs">
+      <DependentUpon>frmNgayLamViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmSerialNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmSerialNumber.Designer.cs">
+      <DependentUpon>frmSerialNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThietLapKetNoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThietLapKetNoi.Designer.cs">
+      <DependentUpon>frmThietLapKetNoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThietLapKetNoiWS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThietLapKetNoiWS.designer.cs">
+      <DependentUpon>frmThietLapKetNoiWS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\frmThongTin.Designer.cs">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HeThong\Providers\PhanQuyenNganhHangDataProvider.cs" />
+    <Compile Include="Modules\HeThong\Reports\rpt_InMaVachSP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_InMaVachSP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\HeThong\UtilFunctions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\..\..\..\Common\QLBH.Win\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frm_InMaVach2.resx">
+      <DependentUpon>frm_InMaVach2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\ThamSoBanHang.resx">
+      <DependentUpon>ThamSoBanHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_CrmTid_CapNhatPhienBanMoi.resx">
+      <DependentUpon>frmHT_CrmTid_CapNhatPhienBanMoi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmBC_PhanQuyenNganhHang.resx">
+      <DependentUpon>frmBC_PhanQuyenNganhHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmBC_PhanQuyenChucNangNguoiDung.resx">
+      <DependentUpon>frmBC_PhanQuyenChucNangNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmBC_PhanQuyenNhomNguoiDung.resx">
+      <DependentUpon>frmBC_PhanQuyenNhomNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmBC_PhanQuyenChucNang.resx">
+      <DependentUpon>frmBC_PhanQuyenChucNang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_SaleTid_CapNhatPhienBanMoi.resx">
+      <DependentUpon>frmHT_SaleTid_CapNhatPhienBanMoi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_LockChungTuManager.resx">
+      <DependentUpon>frmHT_LockChungTuManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_SessionDB.resx">
+      <DependentUpon>frmHT_SessionDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frm_GenMaVach.resx">
+      <DependentUpon>frm_GenMaVach.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmThietLapCaLamViec.resx">
+      <DependentUpon>frmThietLapCaLamViec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ThietLapThuongNhanVien.resx">
+      <DependentUpon>frmHT_ThietLapThuongNhanVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_AddNguoiDung.resx">
+      <DependentUpon>frmHT_AddNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_AddPheDuyetGiaBan.resx">
+      <DependentUpon>frmHT_AddPheDuyetGiaBan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ListNguoiDung.resx">
+      <DependentUpon>frmHT_ListNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_AddNhomNguoiDung.resx">
+      <DependentUpon>frmHT_AddNhomNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ListNhomNguoiDung.resx">
+      <DependentUpon>frmHT_ListNhomNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ListChucNang.resx">
+      <DependentUpon>frmHT_ListChucNang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmBackupRestore.resx">
+      <DependentUpon>frmBackupRestore.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ChangePass.resx">
+      <DependentUpon>frmHT_ChangePass.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmChinhSachChung.resx">
+      <DependentUpon>frmChinhSachChung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmDM_NhomNguoiDung.resx">
+      <DependentUpon>frmDM_NhomNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmGioiThieu.resx">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ChamCong.resx">
+      <DependentUpon>frmHT_ChamCong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_NhatKyERP.resx">
+      <DependentUpon>frmHT_NhatKyERP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_NhatKyNSD.resx">
+      <DependentUpon>frmHT_NhatKyNSD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_QuanTriNSD.resx">
+      <DependentUpon>frmHT_QuanTriNSD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ThamSo.resx">
+      <DependentUpon>frmHT_ThamSo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ThemNhomNSD.resx">
+      <DependentUpon>frmHT_ThemNhomNSD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_ThietLapPheDuyetGiaBan.resx">
+      <DependentUpon>frmHT_ThietLapPheDuyetGiaBan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmHT_TuychonNguoiDung.resx">
+      <DependentUpon>frmHT_TuychonNguoiDung.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmKhachMacDinh.resx">
+      <DependentUpon>frmKhachMacDinh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmMoSo.resx">
+      <DependentUpon>frmMoSo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmNgayDuDau.resx">
+      <DependentUpon>frmNgayDuDau.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmNgayLamViec.resx">
+      <DependentUpon>frmNgayLamViec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmSerialNumber.resx">
+      <DependentUpon>frmSerialNumber.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmThietLapKetNoi.resx">
+      <DependentUpon>frmThietLapKetNoi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmThietLapKetNoiWS.resx">
+      <DependentUpon>frmThietLapKetNoiWS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frmThongTin.resx">
+      <DependentUpon>frmThongTin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\frm_InMaVach.resx">
+      <DependentUpon>frm_InMaVach.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\HeThong\Reports\rpt_InMaVachSP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_InMaVachSP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Common\QLBH.Win\Properties\Settings.settings">
+      <Link>Properties\Settings.settings</Link>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetFileName)" "$(ProjectDir)..\..\..\..\Common\QLBH.Documents\References\TranAnh\HeThong\$(TargetFileName)"
+copy /Y "$(ProjectDir)bin\$(ConfigurationName)\TranAnh\QLBanHang.Modules.HeThong.pdb" "$(ProjectDir)..\..\..\..\Common\QLBH.Documents\References\TranAnh\HeThong\QLBanHang.Modules.HeThong.pdb"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
