@@ -40,15 +40,13 @@ namespace QLBanHang.Modules.HeThong.DAO
 
         public void Delete(int idChucNang)
         {
-            CreateCommonCommand(Declare.StoreProcedureNamespace.spChucNangDeleteCN);
-            Parameters.AddWithValue("@p_IdChucNang", idChucNang);
+            CreateCommand(Declare.StoreProcedureNamespace.spChucNangDeleteCN, idChucNang);
             ExecuteNoneQuery();
         }
 
         public List<ChucNangInfor> Search(string thamso)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spChucNangSearchCN);
-            Parameters.AddWithValue("@p_ThamSo", thamso);
+            CreateCommand(Declare.StoreProcedureNamespace.spChucNangSearchCN, thamso);
             return FillToList<ChucNangInfor>();
         }
     }

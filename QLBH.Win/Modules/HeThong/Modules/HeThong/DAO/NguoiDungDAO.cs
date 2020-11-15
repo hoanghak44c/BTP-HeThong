@@ -98,9 +98,9 @@ namespace QLBanHang.Modules.HeThong.DAO
 
         public void ChangePass(int userId, string matkhau)
         {
-            CreateCommonCommand(Declare.StoreProcedureNamespace.spNguoiDungChangePass);
-            Parameters.AddWithValue("@p_UserID", userId);
-            Parameters.AddWithValue("@p_MatKhau", matkhau);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungChangePass, userId, matkhau);
+            //Parameters.AddWithValue("@p_UserID", userId);
+            //Parameters.AddWithValue("@p_MatKhau", matkhau);
             ExecuteNoneQuery();
         }
 
@@ -120,29 +120,30 @@ namespace QLBanHang.Modules.HeThong.DAO
 
         public NguoiDungInfor GetNguoiDungInfo(string userName)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungGetByUserName);
-            Parameters.AddWithValue("@p_UserName", userName);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungGetByUserName, userName);
+            //Parameters.AddWithValue("@p_UserName", userName);
             return FillToObject<NguoiDungInfor>();
         }
 
         public List<ChucNangInfor> GetChucNangUser(int userId)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungGetChucNang);
-            Parameters.AddWithValue("@p_UserID", userId);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungGetChucNang, userId);
+            //Parameters.AddWithValue("@p_UserID", userId);
             return FillToList<ChucNangInfor>();
         }
 
         public List<NguoiDungInfor> Search(string thamso)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungSearch);
-            Parameters.AddWithValue("@p_ThamSo", thamso);
+            //CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungSearch);
+            //Parameters.AddWithValue("@p_ThamSo", thamso);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungSearch, thamso);
             return FillToList<NguoiDungInfor>();
         }
 
         public List<DMKhoCBOLoadInfo> GetKhoUser(int userId)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungGetKho);
-            Parameters.AddWithValue("@p_UserID", userId);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungGetKho, userId);
+            //Parameters.AddWithValue("@p_UserID", userId);
             return FillToList<DMKhoCBOLoadInfo>();
         }
 
@@ -153,14 +154,14 @@ namespace QLBanHang.Modules.HeThong.DAO
 
         public List<PhanQuyenNganhHangInfor> GetNganhHangUser(int userId)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungGetNganhHang);
-            Parameters.AddWithValue("@p_UserID", userId);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungGetNganhHang, userId);
+            //Parameters.AddWithValue("@p_UserID", userId);
             return FillToList<PhanQuyenNganhHangInfor>();
         }
         public List<PhanQuyenHangSanXuatInfor> GetHangSXUser(int userId)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNguoiDungGetHangSX);
-            Parameters.AddWithValue("@p_UserID", userId);
+            CreateCommand(Declare.StoreProcedureNamespace.spNguoiDungGetHangSX, userId);
+            //Parameters.AddWithValue("@p_UserID", userId);
             return FillToList<PhanQuyenHangSanXuatInfor>();
         }
     }

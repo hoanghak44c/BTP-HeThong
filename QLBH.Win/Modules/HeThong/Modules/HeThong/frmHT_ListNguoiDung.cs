@@ -43,12 +43,19 @@ namespace QLBanHang.Modules.HeThong
         }
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            gNguoiDung.DataSource = NguoiDungDataProvider.Search(txtFilterHanhDong.Text);
-            gvNguoiDung.Columns["NhomNguoiDung"].GroupIndex = 0;
-            gvNguoiDung.ExpandAllGroups();
-            selector.View = gvNguoiDung;
-            selector.CheckMarkColumn.VisibleIndex = 0;
-            txtFilterHanhDong.Focus();
+            try
+            {
+                gNguoiDung.DataSource = NguoiDungDataProvider.Search(txtFilterHanhDong.Text);
+                gvNguoiDung.Columns["NhomNguoiDung"].GroupIndex = 0;
+                gvNguoiDung.ExpandAllGroups();
+                selector.View = gvNguoiDung;
+                selector.CheckMarkColumn.VisibleIndex = 0;
+                txtFilterHanhDong.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDong_Click(object sender, EventArgs e)

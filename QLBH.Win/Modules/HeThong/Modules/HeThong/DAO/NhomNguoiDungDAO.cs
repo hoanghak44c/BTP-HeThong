@@ -33,51 +33,54 @@ namespace QLBanHang.Modules.HeThong.DAO
 
         public NhomNguoiDungInfor GetInfor(int idNhomNguoiDung)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetInfor);
-            Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
+            CreateCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetInfor, idNhomNguoiDung);
+            //Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
             return FillToObject<NhomNguoiDungInfor>();
         }
 
         public List<ChucNangInfor> GetChucNang(int idNhomNguoiDung)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetCNang);
-            Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
+            CreateCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetCNang, idNhomNguoiDung);
+            //Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
             return FillToList<ChucNangInfor>();
         }
 
         public List<PhanQuyenHangSanXuatInfor> GetPhanQuyenHangSanXuat(int idNhomNguoiDung)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetHang);
-            Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
+            CreateCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetHang, idNhomNguoiDung);
+            //Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
             return FillToList<PhanQuyenHangSanXuatInfor>();
             //return GetListCommand<PhanQuyenNganhHangInfor>(Declare.StoreProcedureNamespace.spNhomNguoiDungGetNganh, idNhomNguoiDung);
         }
 
         public List<PhanQuyenNganhHangInfor> GetPhanQuyenNganhHang(int idNhomNguoiDung)
         {
-            CreateGetListCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetNganh);
-            Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
+            CreateCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungGetNganh, idNhomNguoiDung);
+            //Parameters.AddWithValue("@p_IdNhomNguoiDung", idNhomNguoiDung);
             return FillToList<PhanQuyenNganhHangInfor>();
             //return GetListCommand<PhanQuyenNganhHangInfor>(Declare.StoreProcedureNamespace.spNhomNguoiDungGetNganh, idNhomNguoiDung);
         }
 
         public void Update(NhomNguoiDungInfor nhomNguoiDung)
         {
-            CreateCommonCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungUpdate);
-            Parameters.AddWithValue("@p_IdNhomNguoiDung", nhomNguoiDung.IdNhomNguoiDung);
-            Parameters.AddWithValue("@p_MaNhom", nhomNguoiDung.MaNhom);
-            Parameters.AddWithValue("@p_TenNhom", nhomNguoiDung.TenNhom);
-            Parameters.AddWithValue("@p_MoTa", nhomNguoiDung.MoTa);
-            Parameters.AddWithValue("@p_SuDung", (nhomNguoiDung.SuDung ? 1 : 0));
-            Parameters.AddWithValue("@p_XemTon", nhomNguoiDung.XemTon);
-            Parameters.AddWithValue("@p_QuanTri", nhomNguoiDung.QuanTri);
-            Parameters.AddWithValue("@p_DieuChuyen", nhomNguoiDung.DieuChuyen);
-            Parameters.AddWithValue("@p_SuaChungTu", nhomNguoiDung.SuaChungTu);
-            Parameters.AddWithValue("@p_SaleAdmin", nhomNguoiDung.SaleAdmin);
-            Parameters.AddWithValue("@p_XemBaoCao", nhomNguoiDung.XemBaoCao);
-            Parameters.AddWithValue("@p_ShowNotify", nhomNguoiDung.ShowNotify);
-            Parameters.AddWithValue("@p_NhomQuyenHan", nhomNguoiDung.NhomQuyenHan);
-            Parameters.AddWithValue("@p_ChonTrungTamHienTai", nhomNguoiDung.ChonTrungTamHienTai);
+            CreateCommand(Declare.StoreProcedureNamespace.spNhomNguoiDungUpdate
+                , nhomNguoiDung.IdNhomNguoiDung
+                , nhomNguoiDung.MaNhom
+                , nhomNguoiDung.TenNhom
+                , nhomNguoiDung.MoTa
+                , (nhomNguoiDung.SuDung ? 1 : 0)
+                , nhomNguoiDung.XemTon
+                , 0 //p_WebMobile
+                , 0 //p_ChuyenDoiHoaDon
+                , nhomNguoiDung.QuanTri
+                , nhomNguoiDung.DieuChuyen
+                , nhomNguoiDung.SuaChungTu
+                , nhomNguoiDung.SaleAdmin
+                , nhomNguoiDung.XemBaoCao
+                , nhomNguoiDung.ShowNotify
+                , nhomNguoiDung.NhomQuyenHan
+                , 0 //p_ChiXemDuLieuRieng
+                , nhomNguoiDung.ChonTrungTamHienTai);
             ExecuteNoneQuery();
         }
 

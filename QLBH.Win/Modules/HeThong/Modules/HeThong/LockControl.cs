@@ -15,8 +15,8 @@ namespace QLBanHang.Modules.HeThong
     {
         public static void Lock(string functionName)
         {
-            string sql = String.Format("SELECT lk.IdUser,nd.TenDangNhap,lk.Computer, lk.ProcessId FROM tbl_Function_Locking lk INNER JOIN tbl_dm_nguoidung nd ON lk.IdUser = nd.IdNguoidung WHERE lk.FormName='{0}' AND lk.IdKho={1}", functionName, Declare.IdKho);
-            DataTable dt = SqlHelper.ExecuteDataset(ConnectionUtil.Instance.GetConnection(), CommandType.Text, sql).Tables[0];
+            string sql = "SELECT lk.IdUser,nd.TenDangNhap,lk.Computer, lk.ProcessId FROM tbl_Function_Locking lk INNER JOIN tbl_dm_nguoidung nd ON lk.IdUser = nd.IdNguoidung WHERE lk.FormName=:formName AND lk.IdKho=:idKho";
+            DataTable dt = SqlHelper.ExecuteDataset(ConnectionUtil.Instance.GetConnection(), CommandType.Text, sql, functionName, Declare.IdKho).Tables[0];
             if (dt != null && dt.Rows.Count > 0)
             {
                 if (!Equals(dt.Rows[0]["Computer"], Common.GetComputerName()))
@@ -133,8 +133,11 @@ namespace QLBanHang.Modules.HeThong
         {
             try
             {
-                string sql = String.Format("SELECT lk.IdUser,nd.TenDangNhap,lk.Computer, lk.ProcessId FROM tbl_Function_Locking lk INNER JOIN tbl_dm_nguoidung nd ON lk.IdUser = nd.IdNguoidung WHERE lk.Computer='{0}'", Common.GetComputerName());
-                DataTable dt = SqlHelper.ExecuteDataset(ConnectionUtil.Instance.GetConnection(), CommandType.Text, sql).Tables[0];
+                string sql = @"SELECT lk.IdUser,nd.TenDangNhap,lk.Computer, lk.ProcessId 
+                    FROM tbl_Function_Locking lk 
+                        INNER JOIN tbl_dm_nguoidung nd ON lk.IdUser = nd.IdNguoidung 
+                    WHERE lk.Computer=:computer";
+                DataTable dt = SqlHelper.ExecuteDataset(ConnectionUtil.Instance.GetConnection(), CommandType.Text, sql, Common.GetComputerName()).Tables[0];
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     foreach (DataRow row in dt.Rows)
@@ -151,18 +154,18 @@ namespace QLBanHang.Modules.HeThong
                                 {
                                     SqlHelper.ExecuteNonQuery(ConnectionUtil.Instance.GetConnection(),
                                         CommandType.Text,
-                                        String.Format("Delete tbl_function_locking where computer = '{0}' and processid = {1}",
+                                        "Delete tbl_function_locking where computer = :computer and processid = :processid",
                                         Common.GetComputerName(),
-                                        dt.Rows[0]["ProcessId"]));
+                                        dt.Rows[0]["ProcessId"]);
                                 }
                             }
                             else
                             {
                                 SqlHelper.ExecuteNonQuery(ConnectionUtil.Instance.GetConnection(),
                                     CommandType.Text,
-                                    String.Format("Delete tbl_function_locking where computer = '{0}' and processid = {1}",
+                                    "Delete tbl_function_locking where computer = :computer and processid = :processid",
                                     Common.GetComputerName(),
-                                    dt.Rows[0]["ProcessId"]));
+                                    dt.Rows[0]["ProcessId"]);
                             }
                         }
                     }
